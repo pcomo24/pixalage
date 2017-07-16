@@ -5,8 +5,8 @@ export default class SelectBar extends Component {
         super(props);
 
         this.state = {
-            colorVal: '',
-            catVal: '',
+            colorVal: 'Red',
+            catVal: 'All',
             schemeVal: '',
             sizeVal: '',
         }
@@ -16,8 +16,8 @@ export default class SelectBar extends Component {
         <div>
             <div>
                 <label>Color: {this.state.colorVal}</label>
-                <select onChange={(event) => this.setState({colorVal: event.target.value})}>
-                    <option value="red">Red</option>
+                <select onChange={(event) => this.onColorInputChange(event.target.value, this.state.catVal )}>
+                    <option>Red</option>
                     <option>Orange</option>
                     <option>Yellow</option>
                     <option>Green</option>
@@ -27,7 +27,7 @@ export default class SelectBar extends Component {
             </div>
             <div>
                 <label>Category: {this.state.catVal}</label>
-                <select onChange={(event) => this.setState({catVal: event.target.value})}>
+                <select onChange={(event) => this.onColorInputChange(this.state.colorVal, event.target.value)}>
                     <option>All</option>
                     <option>Fashion</option>
                     <option>Nature</option>
@@ -53,7 +53,7 @@ export default class SelectBar extends Component {
             </div>
             <div>
                 <label>Size: {this.state.sizeVal}</label>
-                <select onChange={(event) => this.setState({sizeVal: event.target.value})}>
+                <select onChange={(size) => this.setState({sizeVal: size.target.value})}>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -68,7 +68,7 @@ export default class SelectBar extends Component {
             </div>
             <div>
                 <label>Scheme: {this.state.schemeVal}</label>
-                <select onChange={(event) => this.setState({schemeVal: event.target.value})}>
+                <select onChange={(scheme) => this.setState({schemeVal: scheme.target.value})}>
                     <option>Mono</option>
                     <option>Analog</option>
                     <option>Comp</option>
@@ -76,5 +76,14 @@ export default class SelectBar extends Component {
             </div>
         </div>
         );
+    }
+
+    onColorInputChange(color, category) {
+        this.setState({
+            colorVal: color,
+            catVal: category,
+        });
+        console.log(`onColorInputChange: ${this.state.colorVal},${this.state.catVal}`)
+        this.props.onColorChange(color, category);
     }
 }

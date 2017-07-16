@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import CollageElement from './collage_element';
 
-export default class Collage extends Component {
-    render() {
-        return (
-            <div></div>
-        )
-    }
-}
+var Collage = (props) => {
+    /*const collagePix = props.map((pix) => {
+        return <CollageElement pix={pix} />
+    });*/
+    console.log(`imgURL: ${props.pix}`);
+    return (
+        <div>
+            <img src={props.pix} />
+        </div>
+    );
+};
+
+export default Collage;
 
