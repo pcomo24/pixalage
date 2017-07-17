@@ -16,7 +16,7 @@ export default class SelectBar extends Component {
         <div>
             <div>
                 <label>Color: {this.state.colorVal}</label>
-                <select onChange={(event) => this.onColorInputChange(event.target.value, this.state.catVal )}>
+                <select onChange={(event) => this.onColorInputChange(event.target.value, this.state.catVal, this.state.sizeVal)}>
                     <option>Red</option>
                     <option>Orange</option>
                     <option>Yellow</option>
@@ -27,7 +27,7 @@ export default class SelectBar extends Component {
             </div>
             <div>
                 <label>Category: {this.state.catVal}</label>
-                <select onChange={(event) => this.onColorInputChange(this.state.colorVal, event.target.value)}>
+                <select onChange={(event) => this.onColorInputChange(this.state.colorVal, event.target.value, this.state.sizeVal)}>
                     <option>All</option>
                     <option>Fashion</option>
                     <option>Nature</option>
@@ -53,7 +53,7 @@ export default class SelectBar extends Component {
             </div>
             <div>
                 <label>Size: {this.state.sizeVal}</label>
-                <select onChange={(size) => this.setState({sizeVal: size.target.value})}>
+                <select onChange={(event) => this.onColorInputChange(this.state.colorVal, this.state.catVal, event.target.value)}>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -78,12 +78,13 @@ export default class SelectBar extends Component {
         );
     }
 
-    onColorInputChange(color, category) {
+    onColorInputChange(color, category, size) {
         this.setState({
             colorVal: color,
             catVal: category,
+            sizeVal: size,
         });
-        console.log(`onColorInputChange: ${this.state.colorVal},${this.state.catVal}`)
-        this.props.onColorChange(color, category);
+        console.log(`onColorInputChange: ${this.state.colorVal},${this.state.catVal}, ${this.state.sizeVal}`)
+        this.props.onColorChange(color, category, size);
     }
 }

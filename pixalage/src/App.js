@@ -27,7 +27,7 @@ class App extends Component {
         axios.get(`${base}${colorChoice}${page}`)
             .then((res) => {
                 const pix = res.data;
-                this.setState({pix: pix.hits[132].userImageURL});
+                this.setState({pix: [pix.hits[132].userImageURL]});
                 console.log(`mount: ${this.state.pix}`);
             })
             .catch((err) => {
@@ -35,13 +35,24 @@ class App extends Component {
             })
     }
 
-    getImages(colorVal,catVal) {
+    getImages(colorVal,catVal,sizeVal) {
+        const pixArray = [];
         axios.get(`${base}${colorVal}${page}&category=${catVal}`)
             .then((res) => {
-                const pix = res.data;
+
+                var pix = res.data;
+                //push to new array then delete from old array so it doesnt get used again
+                console.log('pix: ${')
+                for (let i = 0; i < (sizeVal * sizeVal); i++) {
+                    let randNum = Math.floor(Math.random() * 200);
+                    pixArray.push(pix.hits[randNum].userImageURL);
+
+                }
                 this.setState({
-                    pix: pix.hits[132].userImageURL
+                    pix: pixArray
                 });
+                console.log(`pixArray: ${pixArray}`);
+                console.log(`size: ${sizeVal}`);
                 console.log(`color: ${colorVal}`);
                 console.log(`category: ${catVal}`);
                 console.log(`get: ${this.state.pix}`);
@@ -57,7 +68,7 @@ class App extends Component {
             </div>
             <div>
                 <SelectBar
-                    onColorChange={(colorVal, catVal) => this.getImages(colorVal, catVal)}
+                    onColorChange={(colorVal, catVal, sizeVal) => this.getImages(colorVal, catVal, sizeVal)}
                 />
             </div>
             <div>
