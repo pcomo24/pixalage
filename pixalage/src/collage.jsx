@@ -1,5 +1,6 @@
 import React from 'react';
 import CollageElement from './collage_element';
+import './style/style.css';
 
 var Collage = (props) => {
     const collagePix = props.pix.map((pixSrc) => {
@@ -7,7 +8,7 @@ var Collage = (props) => {
     });
     console.log(`imgURL: ${props.pix}`);
     return (
-        <div>
+        <div className="collage-container-3">
             {collagePix}
         </div>
     );

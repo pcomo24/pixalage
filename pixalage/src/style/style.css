@@ -1,0 +1,82 @@
+.collage-container-1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: auto;
+}
+.collage-container-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: auto;
+}
+.collage-container-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-7 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-8 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-9 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+.collage-container-10 {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 320px;
+    width: 80%;
+    height: 100vh;
+}
+
+.image-container {
+    grid-column-start: auto;
+    grid-column-end: auto;
+    grid-row-start: auto;
+    grid-row-end: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+}

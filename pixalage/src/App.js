@@ -11,8 +11,10 @@ const base = `${root}?key=${API_KEY}&q=`;
 const perPage = 200;
 const pageNum = 1;
 const imgType = 'image_type=photo';
+const orientation = '&orientation=horizontal';
+const order = 'order=popular';
 var colorChoice = 'blue';
-const page = `&page=${pageNum}&per_page=${perPage}&${imgType}`;
+const page = `&page=${pageNum}&per_page=${perPage}&${imgType}&${order}`;
 
 
 class App extends Component {
@@ -28,7 +30,7 @@ class App extends Component {
         axios.get(`${base}${colorChoice}${page}`)
             .then((res) => {
                 const pix = res.data;
-                this.setState({pix: [pix.hits[132].userImageURL]});
+                this.setState({pix: [pix.hits[132].webformatURL]});
                 console.log(`mount: ${this.state.pix}`);
             })
             .catch((err) => {
@@ -38,15 +40,19 @@ class App extends Component {
 
     getImages(colorVal,catVal,sizeVal) {
         const pixArray = [];
-        axios.get(`${base}${colorVal}${page}&category=${catVal}`)
+        axios.get(`${base}${colorVal}+${catVal}${page}&category=${catVal}${orientation}`)
             .then((res) => {
-
+                console.log(`query: ${base}${colorVal}${page}&category=${catVal}`)
                 var pix = res.data;
                 //push to new array then delete from old array so it doesnt get used again
-                console.log('pix: ${')
                 for (let i = 0; i < (sizeVal * sizeVal); i++) {
-                    let randNum = Math.floor(Math.random() * 200);
-                    pixArray.push(pix.hits[randNum].userImageURL);
+                    let randNum = Math.floor(Math.random() * pix.hits.length);
+                    pixArray.push(pix.hits[randNum].webformatURL);
+                    pix.hits.splice(randNum, 1);
+                    console.log(`added: ${pixArray[pix]}`)
+                    console.log(`deleted: ${pix.hits[randNum].id}`)
+                    console.log(`pixlen: ${pix.hits.length}`);
+                    console.log(`pixArray: ${pixArray}`)
 
                 }
                 this.setState({
@@ -57,6 +63,9 @@ class App extends Component {
                 console.log(`color: ${colorVal}`);
                 console.log(`category: ${catVal}`);
                 console.log(`get: ${this.state.pix}`);
+            })
+            .catch((err) => {
+                console.error(err);
             })
     };
 
