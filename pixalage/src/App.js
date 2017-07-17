@@ -10,8 +10,9 @@ const root = 'https://pixabay.com/api/';
 const base = `${root}?key=${API_KEY}&q=`;
 const perPage = 200;
 const pageNum = 1;
+const imgType = 'image_type=photo';
 var colorChoice = 'blue';
-const page = `&page=${pageNum}&per_page=${perPage}`;
+const page = `&page=${pageNum}&per_page=${perPage}&${imgType}`;
 
 
 class App extends Component {
