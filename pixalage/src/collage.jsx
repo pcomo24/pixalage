@@ -3,12 +3,16 @@ import CollageElement from './collage_element';
 import './style/style.css';
 
 var Collage = (props) => {
-    const collagePix = props.pix.map((pixSrc) => {
-        return <CollageElement pix={pixSrc} />
+    const size = props.size;
+    const pix = props.pix;
+    const sizeClass = `collage-container-${size}`;
+    const collagePix = pix.map((pixSrc) => {
+        return <CollageElement key={pixSrc.id} pix={pixSrc} />
     });
     console.log(`imgURL: ${props.pix}`);
+    console.log(`sizeProp: ${size}`);
     return (
-        <div className="collage-container-3">
+        <div className={sizeClass}>
             {collagePix}
         </div>
     );

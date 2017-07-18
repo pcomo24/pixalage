@@ -5,7 +5,7 @@ const collageElement = (props) => {
     console.log(`colElement: ${theImage}`)
     return (
         <div className="image-container">
-            <img src={theImage} />
+            <img  alt={theImage.user_id} src={theImage.webformatURL} />
         </div>
     )
 };

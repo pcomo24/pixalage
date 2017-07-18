@@ -1,73 +1,93 @@
 .collage-container-1 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-2 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 320px;
     width: 80%;
     height: auto;
 }
+
 .collage-container-3 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 320px;
     width: 80%;
     height: auto;
 }
+
 .collage-container-4 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-5 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-6 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-7 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-8 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-9 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 .collage-container-10 {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 320px;
     width: 80%;
-    height: 100vh;
+    height: auto;
 }
+
 
 .image-container {
     grid-column-start: auto;

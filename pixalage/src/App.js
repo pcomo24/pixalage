@@ -13,50 +13,79 @@ const pageNum = 1;
 const imgType = 'image_type=photo';
 const orientation = '&orientation=horizontal';
 const order = 'order=popular';
-var colorChoice = 'blue';
 const page = `&page=${pageNum}&per_page=${perPage}&${imgType}&${order}`;
 
+//build array for color scheme algorithm
 
+var colorQ;
+
+/*function getScheme(colorVal, schemeVal, colorQ) {
+    const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
+    var compIndex;
+    var anIndexUp;
+    var anIndexDn;
+    let colorIndex = colors.indexOf(colorVal);
+    if (schemeVal === 'Comp') {
+        compIndex = colors[colorIndex - 2]
+        if (compIndex < 0) {
+            compIndex = colors.length - compIndex;
+        } else {
+            return;
+        }
+        colorQ = `${colors[colorIndex]}+${compIndex}`
+    } else if (schemeVal === 'Analog') {
+        anIndexUp = colors[colorIndex + 1];
+        anIndexDn = colors[colorIndex - 1];
+        if (anIndexUp > colors.length - 1) {
+            anIndexUp = 0 + anIndexUp - colors.length-1;
+        } else if (anIndexDn < 0) {
+           anIndexDn = colors.length - anIndexDn;
+        } else {
+            return;
+        }
+        colorQ = `${colors[colorIndex]}+${colors[anIndexUp]}+${colors[anIndexDn]}`
+    } else {
+        colorQ = `${colors[colorIndex]}`
+    }
+    console.log(`colorQ: ${colorQ}`);
+};*/
+
+//build parent component
 class App extends Component {
     constructor(props) {
        super(props);
 
        this.state = {
            pix: [],
+           size: '',
         }
     }
 
-    componentDidMount() {
-        axios.get(`${base}${colorChoice}${page}`)
-            .then((res) => {
-                const pix = res.data;
-                this.setState({pix: [pix.hits[132].webformatURL]});
-                console.log(`mount: ${this.state.pix}`);
-            })
-            .catch((err) => {
-                console.error(err);
-            })
-    }
-
-    getImages(colorVal,catVal,sizeVal) {
+    getImages(colorVal, catVal, sizeVal, schemeVal) {
         const pixArray = [];
-        axios.get(`${base}${colorVal}+${catVal}${page}&category=${catVal}${orientation}`)
+        //color scheme algorithm changes what gets queried
+        //var theColors = getScheme(colorVal, schemeVal, colorQ);
+        //console.log(theColors);
+        //change request based on scheme selection
+        const getReq = `${base}${colorVal}+${catVal}${page}&category=${catVal}${orientation}`
+        axios.get(getReq)
             .then((res) => {
-                console.log(`query: ${base}${colorVal}${page}&category=${catVal}`)
+                console.log(`query: ${getReq}`)
                 var pix = res.data;
                 //push to new array then delete from old array so it doesnt get used again
                 for (let i = 0; i < (sizeVal * sizeVal); i++) {
                     let randNum = Math.floor(Math.random() * pix.hits.length);
-                    pixArray.push(pix.hits[randNum].webformatURL);
+                    pixArray.push(pix.hits[randNum]);
                     pix.hits.splice(randNum, 1);
-                    console.log(`added: ${pixArray[pix]}`)
+                    console.log(`added: ${pixArray[pixArray.length - 1].id}`)
                     console.log(`deleted: ${pix.hits[randNum].id}`)
-                    console.log(`pixlen: ${pix.hits.length}`);
-                    console.log(`pixArray: ${pixArray}`)
+                    console.log(`pixLen: ${pix.hits.length}`);
+                    console.log(`pixArray: ${pixArray}`);
 
                 }
                 this.setState({
-                    pix: pixArray
+                    pix: pixArray,
+                    size: sizeVal,
                 });
                 console.log(`pixArray: ${pixArray}`);
                 console.log(`size: ${sizeVal}`);
@@ -75,14 +104,18 @@ class App extends Component {
             <div className="App">
             <div className="App-header">
                 <h2>Pixalage</h2>
+                <label>Powered by</label>
+                <a href="https://pixabay.com" target="_blank" rel="noopener noreferrer">
+                    <img src="https://pixabay.com/static/img/logo_square.svg" alt="pixabay logo" width="50"/>
+                </a>
             </div>
             <div>
                 <SelectBar
-                    onColorChange={(colorVal, catVal, sizeVal) => this.getImages(colorVal, catVal, sizeVal)}
+                    onSelectChange={(colorVal, catVal, sizeVal, schemeVal) => this.getImages(colorVal, catVal, sizeVal, schemeVal)}
                 />
             </div>
             <div>
-                <Collage pix={this.state.pix} />
+                <Collage pix={this.state.pix} size={this.state.size}/>
             </div>
             </div>
         );
