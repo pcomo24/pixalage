@@ -12,43 +12,36 @@ const perPage = 200;
 const pageNum = 1;
 const imgType = 'image_type=photo';
 const orientation = '&orientation=horizontal';
-const order = 'order=popular';
+const order = 'order=new';
 const page = `&page=${pageNum}&per_page=${perPage}&${imgType}&${order}`;
 
-//build array for color scheme algorithm
-
-var colorQ;
-
-/*function getScheme(colorVal, schemeVal, colorQ) {
+//color scheme algorithm
+function getScheme(colorVal, schemeVal) {
     const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple'];
-    var compIndex;
-    var anIndexUp;
-    var anIndexDn;
-    let colorIndex = colors.indexOf(colorVal);
+    const colorIndex = colors.indexOf(colorVal);
+    let colorQ;
+
     if (schemeVal === 'Comp') {
-        compIndex = colors[colorIndex - 2]
+        let compIndex = colorIndex - 3;
         if (compIndex < 0) {
-            compIndex = colors.length - compIndex;
-        } else {
-            return;
+            compIndex = colors.length + compIndex;
         }
-        colorQ = `${colors[colorIndex]}+${compIndex}`
+        let compCol = colors[compIndex];
+        colorQ = `${colors[colorIndex]}+${compCol}`
     } else if (schemeVal === 'Analog') {
-        anIndexUp = colors[colorIndex + 1];
-        anIndexDn = colors[colorIndex - 1];
+        let anIndexUp = colorIndex + 1;
+        let anIndexDn = colorIndex - 1;
         if (anIndexUp > colors.length - 1) {
-            anIndexUp = 0 + anIndexUp - colors.length-1;
+            anIndexUp = 0 + anIndexUp - colors.length;
         } else if (anIndexDn < 0) {
-           anIndexDn = colors.length - anIndexDn;
-        } else {
-            return;
-        }
+           anIndexDn = colors.length + anIndexDn;
+        };
         colorQ = `${colors[colorIndex]}+${colors[anIndexUp]}+${colors[anIndexDn]}`
     } else {
         colorQ = `${colors[colorIndex]}`
     }
-    console.log(`colorQ: ${colorQ}`);
-};*/
+    return colorQ;
+};
 
 //build parent component
 class App extends Component {
@@ -64,10 +57,10 @@ class App extends Component {
     getImages(colorVal, catVal, sizeVal, schemeVal) {
         const pixArray = [];
         //color scheme algorithm changes what gets queried
-        //var theColors = getScheme(colorVal, schemeVal, colorQ);
-        //console.log(theColors);
+        let colQuery = getScheme(colorVal, schemeVal);
+        console.log(`color query: ${colQuery}`);
         //change request based on scheme selection
-        const getReq = `${base}${colorVal}+${catVal}${page}&category=${catVal}${orientation}`
+        const getReq = `${base}${colQuery}+${catVal}${page}&category=${catVal}${orientation}`
         axios.get(getReq)
             .then((res) => {
                 console.log(`query: ${getReq}`)

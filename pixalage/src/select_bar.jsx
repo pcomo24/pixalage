@@ -5,10 +5,10 @@ export default class SelectBar extends Component {
         super(props);
 
         this.state = {
-            colorVal: 'Red',
+            colorVal: '',
             catVal: 'All',
-            sizeVal: '',
-            schemeVal: '',
+            sizeVal: '1',
+            schemeVal: 'Mono',
         }
     }
     render() {
