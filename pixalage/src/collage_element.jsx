@@ -10,4 +10,12 @@ const collageElement = (props) => {
     )
 };
 
+export const EmptycollageElement = (props) => {
+    return (
+        <div className="empty image-container">
+
+        </div>
+    )
+};
+
 export default collageElement;

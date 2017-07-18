@@ -54,8 +54,69 @@ class App extends Component {
         }
     }
 
+    processResults (pixArray, res, colorVal, catVal, sizeVal, schemeVal, stop) {
+        console.log(`hits: ${res.data.totalHits}`);
+        console.log(res.data.totalHits < sizeVal * sizeVal && schemeVal !== 'Mono');
+
+
+        let pix = res.data;
+        for (let i = 0; i < (sizeVal * sizeVal); i++) {
+            let randNum = Math.floor(Math.random() * pix.hits.length);
+            if (pix.hits[randNum]) {
+                pixArray.push(pix.hits[randNum]);
+                pix.hits.splice(randNum, 1);
+            } else {
+                //randNum = Math.floor(Math.random() * pixArray.length);
+                //pixArray.push(pixArray[randNum]);
+            }
+
+            // console.log(`pixArray: ${pixArray}`);
+
+            // console.log(`pixLen: ${pix.hits.length}`);
+            // console.log(`pixArray: ${pixArray}`);
+
+        }
+
+        this.setState({
+            pix: pixArray,
+            size: sizeVal,
+        });
+
+        //if number of responses is less than required to build collage do...something
+        if (!stop && res.data.totalHits) {
+            if (res.data.totalHits < sizeVal * sizeVal && schemeVal !== 'Mono') {
+                let colQuery = getScheme(colorVal, schemeVal);
+                const colors = colQuery.split("+");
+                console.log(colors);
+                console.log(`color array: ${colors}`);
+                var plist = [];
+                for (var i=0; i < colors.length; i++) {
+                    let color = colors[i];
+                    console.log(color);
+                    var p = axios.get(`${base}${color}+${catVal}${page}&category=${catVal}${orientation}`);
+                    plist.push(p);
+                }
+
+                Promise.all(plist)
+                    .then((results) => {
+                        results.forEach((res) => {
+                            this.processResults(pixArray, res, colorVal, catVal, sizeVal, schemeVal, true);
+                        });
+                    })
+                    .catch((e) => {
+
+                    })
+            }
+        }
+
+        // console.log(`pixArray: ${pixArray}`);
+        // console.log(`size: ${sizeVal}`);
+        // console.log(`color: ${colorVal}`);
+        // console.log(`category: ${catVal}`);
+        // console.log(`get: ${this.state.pix}`);
+    }
     getImages(colorVal, catVal, sizeVal, schemeVal) {
-        const pixArray = [];
+        console.log('SIZEVAL', sizeVal);
         //color scheme algorithm changes what gets queried
         let colQuery = getScheme(colorVal, schemeVal);
         console.log(`color query: ${colQuery}`);
@@ -63,28 +124,7 @@ class App extends Component {
         const getReq = `${base}${colQuery}+${catVal}${page}&category=${catVal}${orientation}`
         axios.get(getReq)
             .then((res) => {
-                console.log(`query: ${getReq}`)
-                var pix = res.data;
-                //push to new array then delete from old array so it doesnt get used again
-                for (let i = 0; i < (sizeVal * sizeVal); i++) {
-                    let randNum = Math.floor(Math.random() * pix.hits.length);
-                    pixArray.push(pix.hits[randNum]);
-                    pix.hits.splice(randNum, 1);
-                    console.log(`added: ${pixArray[pixArray.length - 1].id}`)
-                    console.log(`deleted: ${pix.hits[randNum].id}`)
-                    console.log(`pixLen: ${pix.hits.length}`);
-                    console.log(`pixArray: ${pixArray}`);
-
-                }
-                this.setState({
-                    pix: pixArray,
-                    size: sizeVal,
-                });
-                console.log(`pixArray: ${pixArray}`);
-                console.log(`size: ${sizeVal}`);
-                console.log(`color: ${colorVal}`);
-                console.log(`category: ${catVal}`);
-                console.log(`get: ${this.state.pix}`);
+                this.processResults([], res, colorVal, catVal, sizeVal, schemeVal);
             })
             .catch((err) => {
                 console.error(err);
@@ -92,7 +132,7 @@ class App extends Component {
     };
 
     render() {
-        console.log(`render: ${this.state.pix}`);
+        //console.log(`render: ${this.state.pix}`);
         return (
             <div className="App">
             <div className="App-header">

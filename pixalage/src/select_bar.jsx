@@ -21,6 +21,7 @@ export default class SelectBar extends Component {
                     this.state.catVal,
                     this.state.sizeVal,
                     this.state.schemeVal)}>
+                    <option disabled selected>Please Choose a Color</option>
                     <option>Red</option>
                     <option>Orange</option>
                     <option>Yellow</option>

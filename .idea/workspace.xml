@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c7e319ad-c72e-4920-a02f-067e20b006bd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/App.js" afterPath="$PROJECT_DIR$/pixalage/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/collage.jsx" afterPath="$PROJECT_DIR$/pixalage/src/collage.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/collage_element.jsx" afterPath="$PROJECT_DIR$/pixalage/src/collage_element.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/select_bar.jsx" afterPath="$PROJECT_DIR$/pixalage/src/select_bar.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="collage.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="collage.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pixalage/src/collage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            <state relative-caret-position="285">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -35,8 +37,8 @@
       <file leaf-file-name="collage_element.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pixalage/src/collage_element.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="71" lean-forward="false" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+            <state relative-caret-position="210">
+              <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -47,27 +49,27 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pixalage/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-964">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="352">
+              <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1500394356000" expanded="true" signature="3418:4116" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="3459:3774" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="3624:3755" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="3792:3989" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="3820:3983" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="4007:4097" ph="..." />
-                <marker date="1500394356000" expanded="true" signature="4078:4091" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="4727:5425" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="4768:5083" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="4933:5064" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="5101:5298" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="5129:5292" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="5316:5406" ph="..." />
+                <marker date="1500418296000" expanded="true" signature="5387:5400" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="select_bar.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="select_bar.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pixalage/src/select_bar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="580">
+              <caret line="109" column="33" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -85,6 +87,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>.id</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -93,11 +100,11 @@
       <list>
         <option value="$PROJECT_DIR$/pixalage/src/index.js" />
         <option value="$PROJECT_DIR$/pixalage/style/style.css" />
-        <option value="$PROJECT_DIR$/pixalage/src/collage_element.jsx" />
-        <option value="$PROJECT_DIR$/pixalage/src/collage.jsx" />
         <option value="$PROJECT_DIR$/pixalage/src/style/style.css" />
-        <option value="$PROJECT_DIR$/pixalage/src/App.js" />
         <option value="$PROJECT_DIR$/pixalage/src/select_bar.jsx" />
+        <option value="$PROJECT_DIR$/pixalage/src/collage_element.jsx" />
+        <option value="$PROJECT_DIR$/pixalage/src/App.js" />
+        <option value="$PROJECT_DIR$/pixalage/src/collage.jsx" />
       </list>
     </option>
   </component>
@@ -277,12 +284,12 @@
       <updated>1499971016347</updated>
       <workItem from="1499971018975" duration="36750000" />
       <workItem from="1500307426397" duration="92000" />
-      <workItem from="1500307647297" duration="23293000" />
+      <workItem from="1500307647297" duration="35643000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60135000" />
+    <option name="totallyTimeSpent" value="72485000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,13 +375,13 @@
           <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1500394356000" expanded="true" signature="3418:4116" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3459:3774" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3624:3755" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3792:3989" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3820:3983" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4007:4097" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4078:4091" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4727:5425" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4768:5083" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4933:5064" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5101:5298" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5129:5292" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5316:5406" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5387:5400" ph="..." />
           </folding>
         </state>
       </provider>
@@ -423,13 +430,13 @@
           <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1500394356000" expanded="true" signature="3418:4116" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3459:3774" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3624:3755" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3792:3989" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3820:3983" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4007:4097" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4078:4091" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4727:5425" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4768:5083" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4933:5064" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5101:5298" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5129:5292" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5316:5406" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5387:5400" ph="..." />
           </folding>
         </state>
       </provider>
@@ -477,16 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pixalage/src/collage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pixalage/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -497,10 +494,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pixalage/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pixalage/src/select_bar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="109" column="33" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pixalage/src/collage_element.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="71" lean-forward="false" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+        <state relative-caret-position="210">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -509,26 +522,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pixalage/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-964">
-          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="352">
+          <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1500394356000" expanded="true" signature="3418:4116" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3459:3774" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3624:3755" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3792:3989" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="3820:3983" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4007:4097" ph="..." />
-            <marker date="1500394356000" expanded="true" signature="4078:4091" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4727:5425" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4768:5083" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="4933:5064" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5101:5298" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5129:5292" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5316:5406" ph="..." />
+            <marker date="1500418296000" expanded="true" signature="5387:5400" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pixalage/src/select_bar.jsx">
+    <entry file="file://$PROJECT_DIR$/pixalage/src/collage.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
