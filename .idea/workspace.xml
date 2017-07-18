@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7e319ad-c72e-4920-a02f-067e20b006bd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/App.js" afterPath="$PROJECT_DIR$/pixalage/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/collage.jsx" afterPath="$PROJECT_DIR$/pixalage/src/collage.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/collage_element.jsx" afterPath="$PROJECT_DIR$/pixalage/src/collage_element.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/select_bar.jsx" afterPath="$PROJECT_DIR$/pixalage/src/select_bar.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pixalage/src/style/style.css" afterPath="$PROJECT_DIR$/pixalage/src/style/style.css" />
-    </list>
+    <list default="true" id="c7e319ad-c72e-4920-a02f-067e20b006bd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -266,12 +260,12 @@
       <updated>1499971016347</updated>
       <workItem from="1499971018975" duration="36750000" />
       <workItem from="1500307426397" duration="92000" />
-      <workItem from="1500307647297" duration="17915000" />
+      <workItem from="1500307647297" duration="17958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54757000" />
+    <option name="totallyTimeSpent" value="54800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
