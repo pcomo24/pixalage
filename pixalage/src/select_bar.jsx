@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 export default class SelectBar extends Component {
     constructor(props) {
         super(props);
@@ -7,21 +9,21 @@ export default class SelectBar extends Component {
         this.state = {
             colorVal: '',
             catVal: 'All',
-            sizeVal: '1',
+            sizeVal: '2',
             schemeVal: 'Mono',
         }
     }
     render() {
         return (
-        <div>
-            <div>
-                <label>Color: {this.state.colorVal}</label>
-                <select onChange={(event) => this.onSelectInputChange(
+        <div className="selectBar">
+            <div className="selectBar">
+                <label>Color</label>
+                <select defaultValue="Choose a Color" onChange={(event) => this.onSelectInputChange(
                     event.target.value,
                     this.state.catVal,
                     this.state.sizeVal,
                     this.state.schemeVal)}>
-                    <option disabled selected>Please Choose a Color</option>
+                    <option disabled>Choose a Color</option>
                     <option>Red</option>
                     <option>Orange</option>
                     <option>Yellow</option>
@@ -30,13 +32,14 @@ export default class SelectBar extends Component {
                     <option>Purple</option>
                 </select>
             </div>
-            <div>
-                <label>Category: {this.state.catVal}</label>
-                <select onChange={(event) => this.onSelectInputChange(
+            <div className="selectBar">
+                <label>Category</label>
+                <select defaultValue="Choose Category" onChange={(event) => this.onSelectInputChange(
                     this.state.colorVal,
                     event.target.value,
                     this.state.sizeVal,
                     this.state.schemeVal)}>
+                    <option disabled>Choose Category</option>
                     <option>All</option>
                     <option>Fashion</option>
                     <option>Nature</option>
@@ -60,14 +63,14 @@ export default class SelectBar extends Component {
                     <option>Music</option>
                 </select>
             </div>
-            <div>
-                <label>Size: {this.state.sizeVal}</label>
-                <select onChange={(event) => this.onSelectInputChange(
+            <div className="selectBar">
+                <label>Pixalage Size</label>
+                <select defaultValue="Choose Pixalage Size" onChange={(event) => this.onSelectInputChange(
                     this.state.colorVal,
                     this.state.catVal,
                     event.target.value,
                     this.state.schemeVal)}>
-                    <option>1</option>
+                    <option disabled>Choose Pixalage Size</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
@@ -79,13 +82,14 @@ export default class SelectBar extends Component {
                     <option>10</option>
                 </select>
             </div>
-            <div>
-                <label>Scheme: {this.state.schemeVal}</label>
-                <select onChange={(event) => this.onSelectInputChange(
+            <div className="selectBar">
+                <label>Color Scheme</label>
+                <select defaultValue="Choose Color Scheme" onChange={(event) => this.onSelectInputChange(
                     this.state.colorVal,
                     this.state.catVal,
                     this.state.sizeVal,
                     event.target.value)}>
+                    <option disabled>Choose Color Scheme</option>
                     <option>Mono</option>
                     <option>Analog</option>
                     <option>Comp</option>
@@ -94,7 +98,8 @@ export default class SelectBar extends Component {
         </div>
         );
     }
-
+    //function called whenever a select option is changed, passes state to app.js to be used for API query building
+    //sizeVal is passed up to app.js, then back down to collage.js to build collage size
     onSelectInputChange(color, category, size, scheme) {
         this.setState({
             colorVal: color,
@@ -102,11 +107,6 @@ export default class SelectBar extends Component {
             sizeVal: size,
             schemeVal: scheme
         });
-        console.log(`onSelectInputChange:
-            ${this.state.colorVal},
-            ${this.state.catVal}, 
-            ${this.state.sizeVal}, 
-            ${this.state.schemeVal}`);
         this.props.onSelectChange(color, category, size, scheme);
     }
 }

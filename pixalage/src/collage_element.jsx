@@ -2,10 +2,11 @@ import React from 'react';
 import './style/style.css';
 const collageElement = (props) => {
     const theImage = props.pix;
-    console.log(`colElement: ${theImage}`)
     return (
         <div className="image-container">
-            <img  alt={theImage.user_id} src={theImage.webformatURL} />
+            <a href={theImage.pageURL} target="_blank" rel="noopener noreferrer">
+                <img  alt={theImage.user_id} src={theImage.webformatURL} />
+            </a>
         </div>
     )
 };
