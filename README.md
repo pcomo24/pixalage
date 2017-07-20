@@ -21,6 +21,7 @@ Once You fork and clone the repository, you should install the dependencies and 
 ### Installation
 
 1.) Fork this repository by clicking button in upper right
+
 2.) Clone the fork to your machine
 
 From the command line
