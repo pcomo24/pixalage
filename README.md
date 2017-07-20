@@ -3,7 +3,7 @@
 ![screen shot 2017-07-19 at 7 50 06 pm](https://user-images.githubusercontent.com/25998142/28395709-9784cf58-6cbb-11e7-8f59-33871ba7c99d.png)
 
 Pixalage is a personal project i created while attending DigitalCrafts Coding Bootcamp.  The goal of this project was mainly to allow me to
-get familiar with React.  The app is buit using React and the Pixabay API.  It creates an API query based on user selected inputs(color, category,
+get familiar with React.  The app is built using React and the Pixabay API.  It creates an API query based on user selected inputs(color, category,
 colorScheme) and returns a 'collage' of images that match the query.
 
 ## Getting Started
